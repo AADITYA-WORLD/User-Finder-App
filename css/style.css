@@ -1,0 +1,15 @@
+#loading{
+  display: none;
+}
+
+.toggle{
+  background-color: black;
+  color: white;
+}
+
+span{
+  color: grey;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
