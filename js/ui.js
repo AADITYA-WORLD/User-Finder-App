@@ -1,20 +1,61 @@
 export function showuser(user){
-    userprofile.innerHTML = "<h2>Users</h2>";
-    user.forEach(user => {
-    userprofile.innerHTML += `<h3>${user.login}</h3>
-    <img src="${user.avatar_url}" alt="${user.login} profile picture" width="100">
-    <br>
-    <a href="${user.html_url}" target="_blank">View Profile</a><br><br>`;
-    });
-};
 
-export function showtopuser(user){
-   toprepo.innerHTML = "<h2>Top Repositories</h2>";
-   user.forEach(element => {
-    toprepo.innerHTML += `<h2>${element.name}</h2>
-    <p>${element.description || 'No description available'}</p>
-    <p>Stars: ${element.stargazers_count}</p>
-    <a href="${element.html_url}" target="_blank">View Repository</a><br><br>`;
+userprofile.innerHTML="";
+
+user.forEach(elem=>{
+
+userprofile.innerHTML+=`
+
+<div class="user">
+
+<img src="${elem.avatar_url}">
+
+<h2>${elem.login}</h2>
+
+<p>GitHub User</p>
+
+<a href="${elem.html_url}" target="_blank" id="profilelink">
+View Profile
+</a>
+
+</div>
+
+`
+
+})
+
+}
+
+export function showtopuser(repos) {
+  toprepo.innerHTML = "";
+
+  repos.forEach((repo) => {
+    toprepo.innerHTML += `
+
+<div class="repo">
+
+<h3>${repo.name}</h3>
+
+<p>${repo.description || "No description available"}</p>
+
+<div class="stats">
+
+⭐ ${repo.stargazers_count}
+&nbsp;&nbsp;
+
+🍴 ${repo.forks_count}
+&nbsp;&nbsp;
+
+👀 ${repo.watchers_count}
+
+</div>
+
+<a href="${repo.html_url}" target="_blank">
+View Repository
+</a>
+
+</div>
+
+`;
   });
-  
 }

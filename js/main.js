@@ -9,12 +9,16 @@ let loading= document.querySelector('#loading');
 let toggle = document.querySelector('#toggle');
 let body = document.querySelector('body');
 let historylist = document.querySelector('#historylist');
+let info = document.querySelector('.info');
 let cache={};
 
 
-toggle.addEventListener('click',()=>{
-  body.classList.toggle('toggle');
-})
+
+toggle.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark")
+
+});
 
 
 function savehistory(name){
@@ -36,6 +40,7 @@ async function handelsearch(){
     if(!nameinput){
       userprofile.innerHTML = '';
       toprepo.innerHTML = '';
+      info.style.display = 'none'; 
       return;
     }
     loadhistory();
@@ -52,8 +57,10 @@ async function handelsearch(){
       let user = await getuser(nameinput);
       let topuser = await gettopuser(nameinput);
       cache[nameinput] = {user,topuser};
+      console.log(user,topuser);
       showuser(user);
       showtopuser(topuser);
+      info.style.display = 'block'; 
     }catch(error){
       userprofile.innerHTML = 'User not found';
       toprepo.innerHTML = '';

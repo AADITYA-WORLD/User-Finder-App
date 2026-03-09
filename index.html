@@ -1,32 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User finder upgrade</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  <div id="finder">
-    <h1 id="appname">User Finder</h1>
-    <button id="toggle">Dark mode</button>
-    <input type="text" id="searchinput" placeholder="Search username">
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User finder upgrade</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+   <div class="container">
 
-  <div>
+  <header id="finder">
+    <h1 id="appname">🔎 GitHub User Finder</h1>
+
+    <button id="toggle">
+      <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+
+    <input
+      type="text"
+      id="searchinput"
+      placeholder="Search GitHub username..."
+    />
+  </header>
+
+  <section id="searched">
     <h3>Searched History</h3>
-    <p id="historylist"></p>
-  </div>
-  <p id="loading">Loading....</p>
-  
-  <div id="userprofile">
-   
-  </div>
+    <div id="historylist"></div>
+  </section>
 
-  <div id="toprepo">
-    
-  </div>
+  <p id="loading">Loading...</p>
 
-  <script type="module" src="js/main.js"></script>
-</body>
+  <section class="info">
+
+    <h2>Users</h2>
+    <div id="userprofile"></div>
+
+    <h2>Top Repositories</h2>
+    <div id="toprepo"></div>
+
+  </section>
+
+</div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
